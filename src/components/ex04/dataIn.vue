@@ -170,20 +170,20 @@
           <b-input @input="fireChanges" v-model="patientInfo.momLastName"></b-input>
         </b-field>
       </b-field>
-      <b-field v-if="$v.patientInfo.$dirty && $v.patientInfo.$invalid">
-        <!-- <b-message type="is-danger" has-icon v-if="!$v.patientInfo.cardId.required">กรุณาใส่ไอดี</b-message>
+      <!-- <b-field v-if="$v.patientInfo.$dirty && $v.patientInfo.$invalid">
+        <b-message type="is-danger" has-icon v-if="!$v.patientInfo.cardId.required">กรุณาใส่ไอดี</b-message>
         <b-message
           type="is-danger"
           has-icon
           v-if="!$v.patientInfo.cardId.numeric"
-        >ไอดีต้องเป็นตัวเลขเท่านั้น</b-message> -->
+        >ไอดีต้องเป็นตัวเลขเท่านั้น</b-message>
         <b-message type="is-danger" has-icon >ERROR</b-message>
-        <!-- <b-message type="is-danger" has-icon v-if="!$v.form.password.required">กรุณาใส่รหัสผ่าน</b-message>
+        <b-message type="is-danger" has-icon v-if="!$v.form.password.required">กรุณาใส่รหัสผ่าน</b-message>
         <b-message
           type="is-danger"
           has-icon
           v-if="!$v.form.password.minLength"
-        >รหัสผ่านต้องอยู่ระหว่าง 4-16 ตัวอักษร</b-message> -->
+        >รหัสผ่านต้องอยู่ระหว่าง 4-16 ตัวอักษร</b-message>
       </b-field>
       <b-field class="buttons" grouped>
         <b-button type="is-primary" @click="touch">Login</b-button>
@@ -191,7 +191,7 @@
       </b-field>
       <p>Dirty : {{ $v.form.$dirty }}</p>
       <p>Invalid : {{ $v.form.$invalid }}</p>
-      <!-- <p>Require username: {{ $v.form.username.required }}</p>
+      <p>Require username: {{ $v.form.username.required }}</p>
       <p>User name between 8-30: {{ $v.form.username.email }}</p>
       <p>Require password: {{ $v.form.password.required }}</p>
       <p>Password between 4-16: {{ $v.form.password.minLength }}</p> -->
@@ -200,7 +200,7 @@
 </template>
 
 <script>
-import { required , numeric , email } from "vuelidate/lib/validators";
+// import { required , numeric , email } from "vuelidate/lib/validators";
 export default {
   props: ["value"],
   data() {
@@ -312,89 +312,89 @@ export default {
         momLastName: this.patientInfo.momLastName,
       })
     },
-    touch() {
-      this.$v.form.$touch();
-    },
-    reset() {
-      this.$v.form.$reset();
-    }
+    // touch() {
+    //   this.$v.form.$touch();
+    // },
+    // reset() {
+    //   this.$v.form.$reset();
+    // }
   },
-  validations : {
-    patientInfo: {
-      cardId: {
-        required,
-        numeric
-      },
-      callAs: {
-        required
-      },
-      firstName: {
-        required
-      },
-      lastName: {
-        required
-      },
-      birthDay: {
-        required
-      },
-      religion: {
-        required
-      },
-      nationality: {
-        required
-      },
-      origin: {
-        required
-      },
-      gender: {
-        required
-      },
-      status: {
-        required
-      },
-      carrer: {
-        required
-      },
-      symtoms: {
-        required
-      },
-      houseNum: {
-        required,
-        numeric
-      },
-      moo: {
-        required
-      },
-      tambon: {
-        required
-      },
-      aumpue: {
-        required
-      },
-      province: {
-        required
-      },
-      phone: {
-        required,
-        numeric
-      },
-      email: {
-        required,
-        email
-      },
-      dadFirstName: {
-        required
-      },
-      dadLastName: {
-        required
-      },
-      momFirstName: {
-        required
-      },
-      momLastName: {
-        required
-      },
-    }
-  }
+  // validations : {
+  //   patientInfo: {
+  //     cardId: {
+  //       required,
+  //       numeric
+  //     },
+  //     callAs: {
+  //       required
+  //     },
+  //     firstName: {
+  //       required
+  //     },
+  //     lastName: {
+  //       required
+  //     },
+  //     birthDay: {
+  //       required
+  //     },
+  //     religion: {
+  //       required
+  //     },
+  //     nationality: {
+  //       required
+  //     },
+  //     origin: {
+  //       required
+  //     },
+  //     gender: {
+  //       required
+  //     },
+  //     status: {
+  //       required
+  //     },
+  //     carrer: {
+  //       required
+  //     },
+  //     symtoms: {
+  //       required
+  //     },
+  //     houseNum: {
+  //       required,
+  //       numeric
+  //     },
+  //     moo: {
+  //       required
+  //     },
+  //     tambon: {
+  //       required
+  //     },
+  //     aumpue: {
+  //       required
+  //     },
+  //     province: {
+  //       required
+  //     },
+  //     phone: {
+  //       required,
+  //       numeric
+  //     },
+  //     email: {
+  //       required,
+  //       email
+  //     },
+  //     dadFirstName: {
+  //       required
+  //     },
+  //     dadLastName: {
+  //       required
+  //     },
+  //     momFirstName: {
+  //       required
+  //     },
+  //     momLastName: {
+  //       required
+  //     },
+  //   }
+  // }
 };
 </script>
