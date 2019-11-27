@@ -1,6 +1,8 @@
 <template>
     <div class="container" id="maincard">
+      <nav-bar></nav-bar>
       <div class="card" id="maincard">
+        
         <data-in v-model="patientInfo"></data-in>
         <parent-of-patient v-model="parentInfo"></parent-of-patient>
         <allergic></allergic>
@@ -19,9 +21,11 @@ import parentOfPatient from './parentOfPatient.vue'
 import allergic from './allergic.vue'
 import yomrub from './yomrub.vue'
 import application from './application.vue'
+import NavBar from "../NavBar.vue";
 
 export default {
   components: {
+    NavBar,
     dataIn,
     parentOfPatient,
     allergic,

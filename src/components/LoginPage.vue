@@ -75,6 +75,8 @@ export default {
           this.$router.push("/ex03");
         })
         .catch(error => {
+          /* eslint-disable no-console */
+          console.log(error);
           this.loginResult = error;
         }
       ); 
