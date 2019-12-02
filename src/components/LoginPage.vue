@@ -1,6 +1,35 @@
 <template>
   <div class="card-content">
     <nav-bar></nav-bar>
+    <b-message  size="is-medium" >Welcome to Group Project IS322 <b-button class="button is-primary " type="is-dark" outlined 
+            @click="isCardModalActive = true">
+            Lecturer
+      </b-button></b-message>
+      
+    <b-modal :active.sync="isCardModalActive" :width="640" scroll="keep">
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-4by3">
+                        <img src="https://www.computing.psu.ac.th/2017/wp-content/uploads/2017/10/IMG_2204_re.jpg" alt="Image">
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-left">
+                            <figure class="image is-48x48">
+                                <img src="https://www.tbs.tu.ac.th/wp-content/uploads/2019/10/%E0%B8%94%E0%B8%A3.%E0%B8%A7%E0%B8%B4%E0%B8%99%E0%B8%B1%E0%B8%A2500x500-570x570.jpg" alt="Image">
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <p class="title is-4">Dr.Winai Nadee</p>
+                            <p class="subtitle is-6">email: winai@tbs.tu.ac.th</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </b-modal>
+
+
     <b-field label="Username" expanded>
       <b-input v-model="form.username" maxlength="30" expanded></b-input>
     </b-field>
@@ -46,7 +75,8 @@ export default {
         username: "",
         password: ""
       },
-      loginResult: {}
+      loginResult: {},
+      isCardModalActive: false
     };
   },
   validations: {
